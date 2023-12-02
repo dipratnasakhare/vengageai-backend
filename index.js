@@ -1,6 +1,6 @@
 const express = require("express")
 const cors  = require("cors")
-const { TravelRotes } = require("./Routes/Travel.Route")
+const { PhoneRotes } = require("./Routes/Phone.Route")
 const { connect } = require("./config/db")
 
 
@@ -10,10 +10,10 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.send("welcome to backend of mock 15")
+    res.send("welcome to backend sd")
 })
 
-app.use("/travel", TravelRotes)
+app.use("/phone", PhoneRotes)
 
 
 
