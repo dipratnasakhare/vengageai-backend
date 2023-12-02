@@ -14,6 +14,18 @@ PhoneRotes.post("/post", async (req, res) => {
   }
 });
 
+PhoneRotes.patch("/patch/:id", async (req, res) => {
+  const data = req.body
+  const {id} = req.params
+try {
+  let store = await ModelPhoneData.updateOne({_id:id}, {$set:data})
+  res.status(200).send("data is updated")
+} catch (err){
+  res.status(200).send({ msg: "someting went wrong", error: err });
+}
+});
+
+
 
 
 PhoneRotes.post("/search", async (req, res) => {
